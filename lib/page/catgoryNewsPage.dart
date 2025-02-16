@@ -35,18 +35,16 @@ class _CatgorynewspageState extends State<Catgorynewspage> {
         leading:  IconButton(icon:const Icon(Icons.arrow_back,color: Colors.white,), onPressed: () {
           Navigator.pop(context);
         },),
-        title:  Center(
-            child: Text(
-              widget.catgoryName,
-              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            )),
+        title:  Text(
+          widget.catgoryName,
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
       body: articles==null?const Center(child: CircularProgressIndicator()): Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
           itemCount: articles!.length,
           itemBuilder: (BuildContext context, int index) =>ArticleItem(article: articles![index]),
-
         ),
       ),
     );
